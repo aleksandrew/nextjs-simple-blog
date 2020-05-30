@@ -12,13 +12,39 @@ import { selector } from '../../reducers/home';
 import _ from 'lodash';
 import styled from 'styled-components';
 import Link from 'next/link';
+import Header from '../../components/Header';
 
 
-const Header = styled.header`
-        display: flex;
-        height: 20vw;
-        background-color: #000;
-        `;
+const CardBlock = styled.figure`
+    display: flex;
+    margin: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+`;
+
+const DescBlock = styled.figcaption`
+    display: flex;
+    flex-basis: 50%;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    margin: 10px 30px;
+`;
+
+const ImageBlock = styled.div`
+    display: flex;
+    flex-basis: 50%;
+`;
+
+const CardTitle = styled.h2`
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+`;
+
+const CardDesc = styled.p`
+    font-size: 1.2rem;
+    color: lightslategray;
+`;
 
 const Home: React.FC = () => {
     const { data } = useSelector(selector);
@@ -43,14 +69,21 @@ const Home: React.FC = () => {
             {/*<link rel="icon" href="/favicon.ico"/>*/}
         </Head>
 
-        <Header>
-            <Link href="/">
-                <a> Home </a>
-            </Link>
-        </Header>
+        <Header />
         <main>
-            <h1>sdfdsf</h1>
-            {_.map(data, (item: IDate) => <div key={item.id}>{item.title}</div>)}
+            <section>
+                <h1>sdfdsf</h1>
+                <CardBlock>
+                    <ImageBlock>
+                        <img src="https://techrocks.ru/wp-content/uploads/2018/05/Next.js-.jpg" alt="next js logo"/>
+                    </ImageBlock>
+                    <DescBlock>
+                        <CardTitle>sadad</CardTitle>
+                        <CardDesc>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, magnam?</CardDesc>
+                    </DescBlock>
+                </CardBlock>
+                {_.map(data, (item: IDate) => <div key={item.id}>{item.title}</div>)}
+            </section>
         </main>
     </>;
 };

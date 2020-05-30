@@ -32,6 +32,10 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
   }
+  img {
+    width: 100%;
+    height: auto;
+  }
   section, header, footer {
   padding: 0 15px;
 }
