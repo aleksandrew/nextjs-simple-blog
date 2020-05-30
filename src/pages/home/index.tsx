@@ -13,38 +13,8 @@ import _ from 'lodash';
 import styled from 'styled-components';
 import Link from 'next/link';
 import Header from '../../components/Header';
+import PostCard from '../../components/PostCard';
 
-
-const CardBlock = styled.figure`
-    display: flex;
-    margin: 10px;
-    flex-direction: row;
-    justify-content: space-between;
-`;
-
-const DescBlock = styled.figcaption`
-    display: flex;
-    flex-basis: 50%;
-    align-items: flex-start;
-    flex-direction: column;
-    width: 100%;
-    margin: 10px 30px;
-`;
-
-const ImageBlock = styled.div`
-    display: flex;
-    flex-basis: 50%;
-`;
-
-const CardTitle = styled.h2`
-    font-size: 1.6rem;
-    margin-bottom: 10px;
-`;
-
-const CardDesc = styled.p`
-    font-size: 1.2rem;
-    color: lightslategray;
-`;
 
 const Home: React.FC = () => {
     const { data } = useSelector(selector);
@@ -72,17 +42,7 @@ const Home: React.FC = () => {
         <Header />
         <main>
             <section>
-                <h1>sdfdsf</h1>
-                <CardBlock>
-                    <ImageBlock>
-                        <img src="https://techrocks.ru/wp-content/uploads/2018/05/Next.js-.jpg" alt="next js logo"/>
-                    </ImageBlock>
-                    <DescBlock>
-                        <CardTitle>sadad</CardTitle>
-                        <CardDesc>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, magnam?</CardDesc>
-                    </DescBlock>
-                </CardBlock>
-                {_.map(data, (item: IDate) => <div key={item.id}>{item.title}</div>)}
+                {_.map(data, (item: IDate) => <PostCard key={item.id} {...item}/>)}
             </section>
         </main>
     </>;
