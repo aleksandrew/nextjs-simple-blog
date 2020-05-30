@@ -6,7 +6,8 @@
     "build": "next build",
     "start": "next start",
     "type-check": "tsc",
-    "lint": "eslint \"**/*.{js,jsx,ts,tsx}\" --fix"
+    "lint": "eslint \"**/*.{js,jsx,ts,tsx}\" --fix",
+    "lint:css": "stylelint \".{js,jsx,ts,tsx}\""
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -42,6 +43,7 @@
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4.0.4",
     "eslint-plugin-typescript": "^0.14.0",
+    "redux-devtools-extension": "^2.13.8",
     "typescript": "^3.9.3"
   },
   "license": "ISC"
